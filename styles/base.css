@@ -1,0 +1,60 @@
+body {
+    background-color: white;
+    margin: 0;
+}
+
+h1 {
+	font-family: 'Open Sans', 'Helvetica Neue', Helvetica, sans-serif;
+	font-size: 40px;
+	font-weight: 300;
+	line-height: 66px;
+	margin-bottom: 30px;
+	text-rendering: optimizelegibility;
+}
+
+nav{
+    background-color: white;
+    display: block;
+    position: fixed;
+    border-bottom: 1px solid rgb(34,36,38);
+    opacity: 0.8;
+    width: 100%;
+    text-align: center;
+}
+
+nav:hover{
+    cursor: pointer;
+}
+
+section {
+    padding: 10px;
+    text-align: center;
+}
+
+a {
+    text-decoration: none;
+}
+
+hr {
+    margin-left: 10%;
+    margin-right: 10%;
+}
+
+.item {
+    display: inline-block;
+    color: black;
+    text-decoration: none;
+    padding: 5px 5px 5px 5px;
+}
+
+.item:hover{
+    background-color: darkgray;
+}
+
+.copyright {
+	font-size: 8pt;
+    text-align: left;
+    color: grey;
+    margin: 0 0 5px 15px;
+    letter-spacing: 1px;
+}

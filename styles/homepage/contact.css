@@ -1,0 +1,20 @@
+.encuesta {
+    display: block;
+    margin: 5px auto 5px auto;
+    padding: 5px;
+    border: 2px solid gray;
+    border-radius: 5px;
+    width: 350px;
+    min-height: 20px;
+}
+
+textarea {
+    min-width: 350px;
+    max-width: 350px;
+    height: 350px;
+}
+
+#send:hover {
+    background-color: gray;
+    cursor: pointer;
+}

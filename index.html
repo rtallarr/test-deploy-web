@@ -11,6 +11,7 @@
         <script src="https://code.jquery.com/jquery-3.1.1.js"></script>
         <script src="https://kit.fontawesome.com/acb5e52e54.js" crossorigin="anonymous"></script> <!-- iconos -->
         <link rel="icon" type="image/svg+xml" href="Archivos/card-list.svg">
+        <link rel="stylesheet" href="https://s.pageclip.co/v1/pageclip.css" media="screen"> <!-- Pageclip -->
     </head>
     <body>
         <nav>
@@ -53,6 +54,14 @@
                 <textarea class="encuesta" placeholder="Message" name="message"></textarea>
                 <input class="encuesta" type="submit" value="Send" id="send">
             </form>
+
+            <form action="https://send.pageclip.co/O0j1aQ7liYMvel3ayCuqiCXhAK9wJbI3" class="pageclip-form" method="post">
+                <input type="text" name="name" value="Roscoe Jones" />
+                <input type="email" name="email" value="roscoe@example.com" />
+                <button type="submit" class="pageclip-form__submit">
+                  <span>Send</span>
+                </button>
+              </form>
         </section>
 
         <footer class="copyright">
@@ -60,5 +69,6 @@
         </footer>
         
     <script src="Controller/jQuery.js"></script>
+    <script src="https://s.pageclip.co/v1/pageclip.js" charset="utf-8"></script> <!-- Pageclip -->
     </body>
 </html>

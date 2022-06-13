@@ -1,12 +1,12 @@
 name: Deploy 🚀
 on:
   push:
-    branches: ["master"]
+    branches: ["dev"]
   workflow_dispatch:
 
 jobs:
   deploy:
-    name: Deploy 🚀
+    name: Deploy staging
     runs-on: ubuntu-latest
     steps:
     - name: 🚚 Get latest code
@@ -18,4 +18,4 @@ jobs:
         server: ${{ secrets.FTP_HOST }}
         username: ${{ secrets.FTP_USERNAME }}
         password: ${{ secrets.FTP_PASSWORD }}
-        server-dir: ${{ secrets.REMOTE_PATH }}
+        server-dir: ${{ secrets.REMOTE_PATH_DEV }}

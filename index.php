@@ -2,12 +2,12 @@
 <html>
     <head>
         <title> Rodrigo Tallar</title>
-        <link rel="stylesheet" type="text/css" href="styles/base.css">
-        <link rel="stylesheet" type="text/css" href="styles/homepage/home.css">
-        <link rel="stylesheet" type="text/css" href="styles/homepage/work.css">
-        <link rel="stylesheet" type="text/css" href="styles/homepage/other.css">
-        <link rel="stylesheet" type="text/css" href="styles/homepage/contact.css">
-        <link rel="icon" type="image/svg+xml" href="Archivos/card-list.svg">
+        <link rel="stylesheet" type="text/css" href="src/styles/base.css">
+        <link rel="stylesheet" type="text/css" href="src/styles/homepage/home.css">
+        <link rel="stylesheet" type="text/css" href="src/styles/homepage/work.css">
+        <link rel="stylesheet" type="text/css" href="src/styles/homepage/other.css">
+        <link rel="stylesheet" type="text/css" href="src/styles/homepage/contact.css">
+        <link rel="icon" type="image/svg+xml" href="public/card-list.svg">
         <link rel="stylesheet" href="https://s.pageclip.co/v1/pageclip.css" media="screen"> <!-- Pageclip -->
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <script src="https://code.jquery.com/jquery-3.1.1.js"></script>

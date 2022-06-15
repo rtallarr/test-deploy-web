@@ -10,8 +10,8 @@
         <link rel="icon" type="image/svg+xml" href="public/card-list.svg">
         <link rel="stylesheet" href="https://s.pageclip.co/v1/pageclip.css" media="screen"> <!-- Pageclip -->
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <script src="https://code.jquery.com/jquery-3.1.1.js"></script>
         <script src="https://kit.fontawesome.com/acb5e52e54.js" crossorigin="anonymous"></script> <!-- iconos -->
+        <script src="https://www.google.com/recaptcha/api.js" async defer></script> <!-- reCaptcha -->
     </head>
     <body>
         <nav>
@@ -24,9 +24,9 @@
         <section id="home">
             <h1>Rodrigo<span id="tallar">Tallar</span></h1>
             <div id="img-container">
-                <img alt="Image could not load" src="Archivos/FotoCV.jpeg" id="pic">
+                <img alt="Image could not load" src="public/FotoCV.jpeg" id="pic">
             </div>
-            <p id="bio">SIUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUU</p>
+            <p id="bio">SIUUUUUUUUUUUUUUUUUUUU</p>
         </section>
 
         <hr>
@@ -52,15 +52,7 @@
                 <input class="encuesta" name="name" type="text" placeholder="Name">
                 <input class="encuesta" type="email" name="_replyto" placeholder="email@example.com" required>
                 <textarea class="encuesta" placeholder="Message" name="message"></textarea>
-                <input class="encuesta" type="submit" value="Send" id="send">
-            </form>
-
-            <!-- test form -->
-            <form action="" method="POST">
-                <input class="encuesta" name="name" type="text" placeholder="Name">
-                <input class="encuesta" type="email" name="_replyto" placeholder="email@example.com" required>
-                <textarea class="encuesta" placeholder="Message" name="message"></textarea>
-                <div class="g-recaptcha" data-sitekey="6LeOzGogAAAAACHj6SY5jItcjuIWVg_mp6vNVHtT"></div>
+                <div class="g-recaptcha encuesta" data-sitekey="6LeOzGogAAAAACHj6SY5jItcjuIWVg_mp6vNVHtT"></div>
                 <input class="encuesta" type="submit" value="Send" id="send">
             </form>
         </section>
@@ -68,8 +60,7 @@
         <footer class="copyright">
             &copy; 2021 Rodrigo Tallar.
         </footer>
-        
-    <script src="Controller/jQuery.js"></script>
+
     <script src="https://s.pageclip.co/v1/pageclip.js" charset="utf-8"></script> <!-- Pageclip -->
 
     <?php
@@ -78,7 +69,7 @@
         function CheckCaptcha($userResponse) {
             $fields_string = '';
             $fields = array(
-                'secret' => 6LeOzGogAAAAABHvAcQ2jdemEpdIyjAwmQRGf8sb
+                'secret' => '6LeOzGogAAAAABHvAcQ2jdemEpdIyjAwmQRGf8sb',
                 'response' => $userResponse
             );
             foreach($fields as $key=>$value)

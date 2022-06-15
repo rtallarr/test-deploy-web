@@ -57,11 +57,20 @@
             </form>
         </section>
 
+        <script>
+	        document.getElementById("invisible-recaptcha-form").addEventListener("submit", function(){
+		        event.preventDefault();
+		        grecaptcha.reset();
+		        grecaptcha.execute();
+	        }, false);
+	        function onSubmit(token) {
+		        document.getElementById("invisible-recaptcha-form").submit();
+	        }
+        </script>
+
         <footer class="copyright">
             &copy; 2021 Rodrigo Tallar.
         </footer>
-
-    <script src="https://s.pageclip.co/v1/pageclip.js" charset="utf-8"></script> <!-- Pageclip -->
 
     <?php
         if(isset($_POST['submit'])) {
@@ -98,7 +107,8 @@
         }
     ?>
 
-    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
-    
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script> <!-- recaptcha -->
+    <script src="https://s.pageclip.co/v1/pageclip.js" charset="utf-8"></script> <!-- Pageclip -->
+
     </body>
 </html>

@@ -52,7 +52,7 @@
                 <input class="encuesta" name="name" type="text" placeholder="Name">
                 <input class="encuesta" type="email" name="_replyto" placeholder="email@example.com" required>
                 <textarea class="encuesta" placeholder="Message" name="message"></textarea>
-                <div class="g-recaptcha encuesta" data-sitekey="6LeOzGogAAAAACHj6SY5jItcjuIWVg_mp6vNVHtT"></div>
+                <div class="g-recaptcha" data-sitekey="6LeOzGogAAAAACHj6SY5jItcjuIWVg_mp6vNVHtT"></div>
                 <input class="encuesta" type="submit" value="Send" id="send">
             </form>
         </section>

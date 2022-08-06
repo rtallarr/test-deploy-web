@@ -94,8 +94,8 @@
         <footer class="copyright">
             &copy; 2021 Rodrigo Tallar.
         </footer>
-        
-    <script src="https://www.google.com/recaptcha/api.js" async defer></script> <!-- recaptcha -->
+
+    <!-- <script src="https://www.google.com/recaptcha/api.js" async defer></script> -->
     <script src="https://s.pageclip.co/v1/pageclip.js" charset="utf-8"></script> <!-- Pageclip -->
 
     </body>

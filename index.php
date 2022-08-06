@@ -24,7 +24,7 @@
         <section id="home">
             <h1>Rodrigo<span id="tallar">Tallar</span></h1>
             <div id="img-container">
-                <img alt="Image could not load" src="img/FotoCV.jpeg" id="pic">
+                <img alt="Image could not load" src="src/img/FotoCV.jpeg" id="pic">
             </div>
             <p id="bio">SIUUUUUUUUUUUUUUUUUUUU</p>
         </section>
@@ -55,6 +55,41 @@
                 <div class="g-recaptcha" data-sitekey="6LeOzGogAAAAACHj6SY5jItcjuIWVg_mp6vNVHtT"></div>
                 <input class="encuesta" type="submit" value="Send" id="send" name="submit">
             </form>
+
+            <?php
+                if(isset($_POST['submit'])){
+                    function CheckCaptcha($userResponse) {
+                        $fields_string = '';
+                        $fields = array(
+                            'secret' => '6LeOzGogAAAAABHvAcQ2jdemEpdIyjAwmQRGf8sb',
+                            'response' => $userResponse
+                        );
+                        foreach($fields as $key=>$value)
+                        $fields_string .= $key . '=' . $value . '&';
+                        $fields_string = rtrim($fields_string, '&');
+            
+                        $ch = curl_init();
+                        curl_setopt($ch, CURLOPT_URL, 'https://www.google.com/recaptcha/api/siteverify');
+                        curl_setopt($ch, CURLOPT_POST, count($fields));
+                        curl_setopt($ch, CURLOPT_POSTFIELDS, $fields_string);
+                        curl_setopt($ch, CURLOPT_RETURNTRANSFER, True);
+            
+                        $res = curl_exec($ch);
+                        curl_close($ch);
+            
+                        return json_decode($res, true);
+                    }
+
+                    $result = CheckCaptcha($_POST['g-recaptcha-response']);
+
+                    if ($result['success']) {
+                        echo "Captcha verified Successfully";
+                    } else {
+                    echo '<script>alert("Error Message");</script>';
+                    }
+                }
+            ?>
+
         </section>
 
         <footer class="copyright">

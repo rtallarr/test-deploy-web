@@ -48,7 +48,7 @@
 
         <section id="contact">
             <h2>Contact</h2>
-            <form action="https://send.pageclip.co/O0j1aQ7liYMvel3ayCuqiCXhAK9wJbI3/contact" method="POST">
+            <form action="" method="POST">
                 <input class="encuesta" name="name" type="text" placeholder="Name">
                 <input class="encuesta" type="email" name="_replyto" placeholder="email@example.com" required>
                 <textarea class="encuesta" placeholder="Message" name="message"></textarea>

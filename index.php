@@ -3,11 +3,11 @@
     <head>
         <title> Rodrigo Tallar</title>
         <link rel="stylesheet" type="text/css" href="src/styles/base.css">
-        <link rel="stylesheet" type="text/css" href="src/styles/homepage/home.css">
-        <link rel="stylesheet" type="text/css" href="src/styles/homepage/work.css">
-        <link rel="stylesheet" type="text/css" href="src/styles/homepage/other.css">
-        <link rel="stylesheet" type="text/css" href="src/styles/homepage/contact.css">
-        <link rel="icon" type="image/svg+xml" href="public/card-list.svg">
+        <link rel="stylesheet" type="text/css" href="src/styles/home.css">
+        <link rel="stylesheet" type="text/css" href="src/styles/work.css">
+        <link rel="stylesheet" type="text/css" href="src/styles/other.css">
+        <link rel="stylesheet" type="text/css" href="src/styles/contact.css">
+        <link rel="icon" type="image/svg+xml" href="src/img/card-list.svg">
         <link rel="stylesheet" href="https://s.pageclip.co/v1/pageclip.css" media="screen"> <!-- Pageclip -->
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <script src="https://kit.fontawesome.com/acb5e52e54.js" crossorigin="anonymous"></script> <!-- iconos -->
@@ -24,7 +24,7 @@
         <section id="home">
             <h1>Rodrigo<span id="tallar">Tallar</span></h1>
             <div id="img-container">
-                <img alt="Image could not load" src="public/FotoCV.jpeg" id="pic">
+                <img alt="Image could not load" src="img/FotoCV.jpeg" id="pic">
             </div>
             <p id="bio">SIUUUUUUUUUUUUUUUUUUUU</p>
         </section>
@@ -40,7 +40,7 @@
 
         <section id="others">
             <h2>Others</h2>
-            <a class="bottom_links" href="Horarios/2021-2/horario.html"><i class="fas fa-calendar-alt"></i> Schedule</a>
+            <a class="bottom_links" href="Horario/horario.html"><i class="fas fa-calendar-alt"></i> Schedule</a>
             <a class="bottom_links" target="_blank" href="Archivos/CV.pdf"><i class="far fa-address-card"></i> Curriculum Vitae</a>
         </section>
 
@@ -53,20 +53,42 @@
                 <input class="encuesta" type="email" name="_replyto" placeholder="email@example.com" required>
                 <textarea class="encuesta" placeholder="Message" name="message"></textarea>
                 <div class="g-recaptcha" data-sitekey="6LeOzGogAAAAACHj6SY5jItcjuIWVg_mp6vNVHtT"></div>
-                <input class="encuesta" type="submit" value="Send" id="send">
+                <input class="encuesta" type="submit" value="Send" id="send" name="submit">
             </form>
-        </section>
+            <div class="status">
+                <?php
+                if(isset($_POST['submit'])){
+                    $User_name = $_POST['name']
+                    $User_mail = $_POST['_replyto']
+                    $User_message = $_POST['message']
 
-        <script>
-	        document.getElementById("invisible-recaptcha-form").addEventListener("submit", function(){
-		        event.preventDefault();
-		        grecaptcha.reset();
-		        grecaptcha.execute();
-	        }, false);
-	        function onSubmit(token) {
-		        document.getElementById("invisible-recaptcha-form").submit();
-	        }
-        </script>
+                    $email_from = 'noreply@tallar.site';
+                    $email_subject = "New Form Submission";
+                    $email_body = "Name: $User_name.\n".
+                                    "Email id: $User_mail.\n".
+                                    "User message: $User_message.\n";
+
+                    $to_email = "rtallax@gmail.com"
+                    $headers = "From: $email_from \r\n";
+                    $headers .= "Reply-To: $User_email\r\n";
+
+                    $secretKey = "6LeOzGogAAAAABHvAcQ2jdemEpdIyjAwmQRGf8sb";
+                    $responseKey = $_POST['g-recaptcha-response'];
+                    $UserIP = $_SERVER['REOMTE_ADDR'];
+                    $url = "https://www.google.com/recaptcha/api/siteverify?secret=$secretKey&response=$responseKey&remoteip=$UserIP";
+
+                    $response = file_get_contents($url);
+                    $response = json_decode($response);
+
+                    if ($response->success){
+                        mail($to_email,$email_subject,$email_body,$headers);
+                        echo "Message Sent Succesfully";
+                    } else {
+                        echo "<span>Invalid Captcha, Please Try Again</span>"
+                    }
+                }
+            </div>
+        </section>
 
         <footer class="copyright">
             &copy; 2021 Rodrigo Tallar.

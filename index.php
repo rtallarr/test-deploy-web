@@ -87,6 +87,7 @@
                         echo "<span>Invalid Captcha, Please Try Again</span>"
                     }
                 }
+                ?>
             </div>
         </section>
 

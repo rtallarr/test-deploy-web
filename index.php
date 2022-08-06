@@ -55,40 +55,6 @@
                 <div class="g-recaptcha" data-sitekey="6LeOzGogAAAAACHj6SY5jItcjuIWVg_mp6vNVHtT"></div>
                 <input class="encuesta" type="submit" value="Send" id="send" name="submit">
             </form>
-            <div class="status">
-                <?php
-                if(isset($_POST['submit'])){
-                    $User_name = $_POST['name']
-                    $User_mail = $_POST['_replyto']
-                    $User_message = $_POST['message']
-
-                    $email_from = 'noreply@tallar.site';
-                    $email_subject = "New Form Submission";
-                    $email_body = "Name: $User_name.\n".
-                                    "Email id: $User_mail.\n".
-                                    "User message: $User_message.\n";
-
-                    $to_email = "rtallax@gmail.com"
-                    $headers = "From: $email_from \r\n";
-                    $headers .= "Reply-To: $User_email\r\n";
-
-                    $secretKey = "6LeOzGogAAAAABHvAcQ2jdemEpdIyjAwmQRGf8sb";
-                    $responseKey = $_POST['g-recaptcha-response'];
-                    $UserIP = $_SERVER['REOMTE_ADDR'];
-                    $url = "https://www.google.com/recaptcha/api/siteverify?secret=$secretKey&response=$responseKey&remoteip=$UserIP";
-
-                    $response = file_get_contents($url);
-                    $response = json_decode($response);
-
-                    if ($response->success){
-                        mail($to_email,$email_subject,$email_body,$headers);
-                        echo "Message Sent Succesfully";
-                    } else {
-                        echo "<span>Invalid Captcha, Please Try Again</span>"
-                    }
-                }
-                ?>
-            </div>
         </section>
 
         <footer class="copyright">
